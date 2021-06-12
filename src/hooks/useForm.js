@@ -1,0 +1,26 @@
+//Custom Hook de formulario
+
+import { useState } from "react"
+
+export const useForm = (initialState = {} ) => {
+    
+    const [values, setValues] = useState(initialState); 
+
+    const reset = () => {
+        setValues( initialState );
+    }
+
+
+    //handleInputChange:
+    const handleInputChange =( {target} ) => {
+
+        setValues ({
+            ...values,
+            [target.name]: target.value
+        });
+    }
+
+
+    return [ values, handleInputChange, reset ];
+
+}
