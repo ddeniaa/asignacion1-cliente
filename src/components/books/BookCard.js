@@ -33,7 +33,7 @@ export const BookCard = ({
         <img src={img} className="card-img" alt="img" />
         <div className="card-body">
           <h1 className="card-title"> {titulo} </h1>
-          <p className="autor"> Autor: Autor: {autor} </p>
+          <p className="autor"> Autor: {autor} </p>
           <p className="decripcion"> {descripCorta} </p>
         </div>
         <div className="card-footer">
