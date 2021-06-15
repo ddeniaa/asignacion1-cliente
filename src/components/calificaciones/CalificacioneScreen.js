@@ -5,11 +5,11 @@ import React from 'react'
 export const CalificacioneScreen = () => {
 
     const handleDesc = () => {
-        window.location.href = 'https://commerce-app.herokuapp.com/calificacionDesc'
+        window.location.href = '/calificacionDesc'
     }
 
     const handleAsc = () => {
-        window.location.href = 'https://commerce-app.herokuapp.com/calificacionAsc'
+        window.location.href = '/calificacionAsc'
     }
 
     return (

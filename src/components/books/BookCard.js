@@ -17,7 +17,7 @@ export const BookCard = ({
 
 
   const handlePictureClick = () => {
-    window.location.href = `https://commerce-app.herokuapp.com/book/${id}`
+    window.location.href = `/book/${id}`
   }
 
 

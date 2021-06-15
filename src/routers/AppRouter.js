@@ -74,14 +74,14 @@ export const AppRouter = () => {
           <PrivateRoute
             exact
             isAuthenticated={isLoggedIn}
-            path="https://commerce-app.herokuapp.com/user" 
+            path="/user" 
             component={UserScreen} 
           
             />
 
 
           <Route
-            path="https://commerce-app.herokuapp.com/"
+            path="/"
             component={DashboardRoutes}
           />
 

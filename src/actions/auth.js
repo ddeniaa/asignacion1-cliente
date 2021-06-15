@@ -25,7 +25,7 @@ export const startFacebookLogin = () =>{
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
-               window.location.href = `https://commerce-app.herokuapp.com/user`
+               window.location.href = `/user`
            )
         });
     }
