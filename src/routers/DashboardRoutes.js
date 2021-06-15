@@ -19,15 +19,15 @@ export const DashboardRoutes = () => {
         <Navbar />
         <div className="container">
             <Switch>
-                <Route exact path="/" component= { HomeScreen } />
-                <Route path="/catalogo" component= { CatalogoScreen } />
-                <Route exact path="/calificaciones" component= { CalificacioneScreen } />
-                <Route exact path="/calificacionDesc" component= { CalificacionDesc } />
-                <Route exact path="/calificacionAsc" component= { CalificacionAsc } />
-                <Route exact path="/search" component= { SearchScreen } />
-                <Route path="/book/:id" component= { BookScreen } />
-                <Route exact path="/user" component= { UserScreen } />
-               <Redirect to="/" />
+                <Route exact path="https://commerce-app.herokuapp.com//" component= { HomeScreen } />
+                <Route path="https://commerce-app.herokuapp.com//catalogo" component= { CatalogoScreen } />
+                <Route exact path="https://commerce-app.herokuapp.com//calificaciones" component= { CalificacioneScreen } />
+                <Route exact path="https://commerce-app.herokuapp.com//calificacionDesc" component= { CalificacionDesc } />
+                <Route exact path="https://commerce-app.herokuapp.com//calificacionAsc" component= { CalificacionAsc } />
+                <Route exact path="https://commerce-app.herokuapp.com//search" component= { SearchScreen } />
+                <Route path="https://commerce-app.herokuapp.com//book/:id" component= { BookScreen } />
+                <Route exact path="https://commerce-app.herokuapp.com//user" component= { UserScreen } />
+               <Redirect to="https://commerce-app.herokuapp.com//" />
             </Switch>
         </div>
         </>

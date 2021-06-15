@@ -9,7 +9,7 @@ import { SimpleSlider } from './Slider';
 export const HomeScreen = () => {
 
     const handlePageChange = () => {
-        window.location.href = '/catalogo'
+        window.location.href = 'https://commerce-app.herokuapp.com/catalogo'
     }
     
     return (

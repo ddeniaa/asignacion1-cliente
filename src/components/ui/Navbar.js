@@ -11,7 +11,7 @@ export const Navbar = () => {
 
             <Link
                 className="navbar-brand"
-                to="/"
+                to="https://commerce-app.herokuapp.com/"
             > Home
                     </Link>
 
@@ -23,7 +23,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
-                        to="/catalogo"
+                        to="https://commerce-app.herokuapp.com/catalogo"
                     > Catálogo
                     </NavLink>
 
@@ -31,7 +31,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
-                        to="/calificaciones"
+                        to="https://commerce-app.herokuapp.com/calificaciones"
                     >Calificaciones
                     </NavLink>
 
@@ -39,7 +39,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link"
                         exact
-                        to="/search"
+                        to="https://commerce-app.herokuapp.com/search"
                     >Buscar
                     </NavLink>
                 </div>
@@ -50,7 +50,7 @@ export const Navbar = () => {
                     <Link
                         type="button"
                         className="navbar-brand"
-                        to="/login"
+                        to="https://commerce-app.herokuapp.com/login"
                     > login
                     </Link>
                     

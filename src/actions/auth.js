@@ -11,7 +11,7 @@ export const startGoogleLogin = () =>{
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
-               window.location.href = `/user`
+               window.location.href = `https://commerce-app.herokuapp.com/user`
            )
         });
     }
@@ -25,7 +25,7 @@ export const startFacebookLogin = () =>{
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
-               window.location.href = `/user`
+               window.location.href = `https://commerce-app.herokuapp.com/user`
            )
         });
     }
