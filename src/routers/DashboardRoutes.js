@@ -19,14 +19,14 @@ export const DashboardRoutes = () => {
         <Navbar />
         <div className="container">
             <Switch>
-                <Route exact path="/" component= { HomeScreen } />
-                <Route to="/catalogo" component= { CatalogoScreen } />
-                <Route exact path="/calificaciones" component= { CalificacioneScreen } />
-                <Route exact path="/calificacionDesc" component= { CalificacionDesc } />
-                <Route exact path="/calificacionAsc" component= { CalificacionAsc } />
-                <Route exact path="/search" component= { SearchScreen } />
+                <Route path="/" component= { HomeScreen } />
+                <Route path="/catalogo" component= { CatalogoScreen } />
+                <Route path="/calificaciones" component= { CalificacioneScreen } />
+                <Route path="/calificacionDesc" component= { CalificacionDesc } />
+                <Route path="/calificacionAsc" component= { CalificacionAsc } />
+                <Route path="/search" component= { SearchScreen } />
                 <Route path="/book/:id" component= { BookScreen } />
-                <Route exact path="/user" component= { UserScreen } />
+                <Route path="/user" component= { UserScreen } />
                <Redirect to="/" />
             </Switch>
         </div>

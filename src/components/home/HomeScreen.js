@@ -2,6 +2,7 @@ import React from 'react';
 import { BookList } from '../books/BookList';
 import { Footer } from '../ui/Footer';
 import { SimpleSlider } from './Slider';
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,7 +10,8 @@ import { SimpleSlider } from './Slider';
 export const HomeScreen = () => {
 
     const handlePageChange = () => {
-        window.location.href = '/catalogo'
+        <Link to='/catalogo'/>
+        // window.location.href = '/catalogo'
     }
     
     return (
