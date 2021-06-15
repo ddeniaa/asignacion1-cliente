@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { startFacebookLogin, startGoogleLogin } from '../actions/auth';
 
+
+
 export const LoginScreen = () => {
 
     const dispatch = useDispatch(); 
@@ -12,6 +14,7 @@ export const LoginScreen = () => {
 
  const handleGoogleLogin =() =>{
     dispatch ( startGoogleLogin() );
+    
 }
 
 

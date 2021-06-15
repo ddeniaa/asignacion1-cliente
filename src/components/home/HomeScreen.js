@@ -14,7 +14,7 @@ export const HomeScreen = () => {
     
     return (
         <>
-            <div> <SimpleSlider key="id" /> </div>
+            <div> <SimpleSlider /> </div>
             <div>
                 <h1>Catálogo</h1>
                 <hr />

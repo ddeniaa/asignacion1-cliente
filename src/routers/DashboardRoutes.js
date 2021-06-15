@@ -6,7 +6,7 @@ import { CalificacioneScreen } from '../components/calificaciones/CalificacioneS
 import { HomeScreen } from '../components/home/HomeScreen';
 import { SearchScreen } from '../components/search/SearchScreen';
 import { Navbar } from '../components/ui/Navbar';
-import { UserScreen } from '../login/UserScreen';
+import { UserScreen } from '../user/UserScreen';
 import { CalificacionDesc } from '../components/calificaciones/CalificacionDesc';
 import { CalificacionAsc } from '../components/calificaciones/CalificacionAsc';
 

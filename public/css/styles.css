@@ -33,8 +33,37 @@ h1{
 
 .simpleSlider {
   margin-top: 50px;
-
 }
+ 
+/*slider*/
+body { margin: 0; } 
+div#slider { overflow: hidden; } /* las imágenes no van a salir del márgen de la pantalla*/
+div#slider figure img { width: 20%; float: left; }
+
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 15s slidy infinite; /*el movimiento se va a mantener de forma indefinida -infinito-*/
+}
+
+
+/*esta parte del código define el movimiento de las imágenes a la izquierda*/
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
 
 .results{
 
@@ -50,7 +79,6 @@ h1{
 
 
 /*Card*/
-
 
 .card-deck{
  float: left !important;
@@ -120,6 +148,11 @@ ul{
 .btn-return{
   padding: 20px !important;
   margin-top: 12px;
+}
+
+
+.fas.fa-sign-out-alt{
+  color: white;
 }
 
   
@@ -317,9 +350,55 @@ ul{
 }
 
 
+/*sidebar*/
+
+.sidebar{
+  background-color: #071b34;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 450px;
+    height: 100vh;
+}
+
+.sidebar-navbar{
+  display: flex;
+  justify-content: space-between; 
+}
 
 
+.nothing_main-content{
+  align-items: center;
+    background-color: #cfc8c8!important;
+    color: whitesmoke;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    height: 100vh;
 
+   
+}
 
+.user_main-content{
+  display: flex;
+}
+
+main{
+  width: -webkit-fill-available;
+}
+
+.fa-heart{
+  margin-left: 50px;
+}
+
+.fa-plus-circle{
+  margin-left: 50px;
+}
+
+.fa-comments{
+ margin-left: 50px;
+}
 
 

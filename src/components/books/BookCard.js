@@ -1,4 +1,9 @@
 import React from 'react';
+import ReactStars from 'react-rating-stars-component';
+
+
+
+
 
 
 export const BookCard = ({
@@ -16,6 +21,12 @@ export const BookCard = ({
   }
 
 
+
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
+
+
   return (
     <div className="card-deck" id={id}>
       <div onClick={handlePictureClick} className="card" style={{ maxWidth: 210 }}>
@@ -26,7 +37,15 @@ export const BookCard = ({
           <p className="decripcion"> {descripCorta} </p>
         </div>
         <div className="card-footer">
-          <small>Calificación: {calificacion}</small>
+          <small>Calificación:
+            <ReactStars
+              count={calificacion}
+              onChange={ratingChanged}
+              size={18}
+              color={"#7B113A"}
+              edit={false}
+            />
+          </small>
         </div>
       </div>
     </div>

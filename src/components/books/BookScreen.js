@@ -1,6 +1,7 @@
 //Donde se detalla el producto al darle clicks.
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import ReactStars from 'react-rating-stars-component';
 
 
 
@@ -14,10 +15,10 @@ export const BookScreen = ({ history }) => {
 
 
   useEffect(() => {
-    fetchItems();
-  }, []);
+    fetchItems(id);
+  }, [id]);
 
-  const fetchItems = async () => {
+  const fetchItems = async (id) => {
     const url = `/api/libros/listalibros/libro/${id}`
     const resp = await fetch(url);
     const { data } = await resp.json();
@@ -29,14 +30,18 @@ export const BookScreen = ({ history }) => {
 
 
   //handlReturn retorna a la pagina anterior
-  const handleReturn = () =>{
+  const handleReturn = () => {
 
-    if ( history.length <= 2){
-        history.push('/');
-    }else{
-     history.goBack();
+    if (history.length <= 2) {
+      history.push('/');
+    } else {
+      history.goBack();
+    }
   }
-}
+
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
 
 
   const {
@@ -47,8 +52,12 @@ export const BookScreen = ({ history }) => {
     descripLarga,
     palabrasClaves,
     categoria,
-    calificacion
+    calificacion,
+   
   } = filt;
+
+
+
 
 
   return (
@@ -58,8 +67,10 @@ export const BookScreen = ({ history }) => {
           className="btn m-1 btn-block btn-outline-ligth"
           onClick={handleReturn}
         >
-         <i className="fas fa-chevron-circle-left"></i>
+          <i className="fas fa-chevron-circle-left"></i>
         </button>
+
+
         <div className="card mb-3" style={{ maxwidth: 520, maxheight: 300 }}>
           <div className="row g-0">
             <div className="col-md-4">
@@ -70,7 +81,15 @@ export const BookScreen = ({ history }) => {
                 <h1 className="card-text-unlibro"> {titulo}</h1>
                 <hr />
                 <p className="card-text">Autor: {autor} </p>
-                <p className="card-text">Calificación: {calificacion} </p>
+                <div className="card-text">Calificación:
+                  <ReactStars
+                    count={calificacion}
+                    onChange={ratingChanged}
+                    size={18}
+                    color={"#7B113A"}
+                    edit={false}
+                  />
+                </div>
                 <p className="card-text">Sinopsis: {descripCorta} </p>
                 <p className="card-text"> {descripLarga} </p>
                 <p className="card-text">categoria: {categoria} </p>
@@ -78,8 +97,25 @@ export const BookScreen = ({ history }) => {
               </div>
             </div>
           </div>
-
         </div>
+
+
+        {/* <hr />
+        <h5>Comentarios:</h5>
+        <hr />
+        <div className="card">
+          <div className="card-header">
+            {}
+          </div>
+          <div className="card-body">
+            <blockquote className="blockquote mb-0">
+              <p>{}</p>
+              <footer className="blockquote-footer">{} 
+              </footer>
+            </blockquote>
+          </div>
+        </div> */}
+
       </div>
     </>
   )
