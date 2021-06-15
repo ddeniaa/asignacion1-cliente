@@ -25,7 +25,7 @@ export const DashboardRoutes = () => {
                 <Route exact path="/calificacionDesc" component= { CalificacionDesc } />
                 <Route exact path="/calificacionAsc" component= { CalificacionAsc } />
                 <Route exact path="/search" component= { SearchScreen } />
-                <Route exact path="/book/:id" component= { BookScreen } />
+                <Route path="/book/:id" component= { BookScreen } />
                 <Route exact path="/user" component= { UserScreen } />
                <Redirect to="/" />
             </Switch>
