@@ -2,11 +2,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
+import { db } from '../../firebase/firebaseConfig';
 
 
 
 
 export const BookScreen = ({ history }) => {
+
+
+
 
   const { id } = useParams();
   //console.log(id);
@@ -27,6 +31,35 @@ export const BookScreen = ({ history }) => {
     //console.log(data)
     setFilt(data)
   }
+
+
+  
+
+  const idc  = useParams()
+  console.log(idc);
+
+
+  const comentarios = async (idc) => {
+
+    const comentariosSnap = await db.collection(`/books/${idc}/comentarios`).get();
+    const comentarios = [];
+
+    comentariosSnap.forEach(snapHijo => {
+      comentarios.push({
+        id: snapHijo.id,
+        usuario: snapHijo.data().usuario,
+        fechaComentario: snapHijo.data().fechaComentario,
+        descripComentario: snapHijo.data().descripComentario,
+        calificacionUsuario: snapHijo.data().calificacionUsuario
+      })
+    });
+    console.log(comentarios)
+
+  }
+
+  comentarios()
+
+
 
 
   //handlReturn retorna a la pagina anterior
@@ -53,7 +86,7 @@ export const BookScreen = ({ history }) => {
     palabrasClaves,
     categoria,
     calificacion,
-   
+
   } = filt;
 
 
@@ -98,6 +131,8 @@ export const BookScreen = ({ history }) => {
             </div>
           </div>
         </div>
+
+
 
 
         {/* <hr />
