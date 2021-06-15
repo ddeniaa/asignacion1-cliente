@@ -20,12 +20,12 @@ export const DashboardRoutes = () => {
         <div className="container">
             <Switch>
                 <Route exact path="/" component= { HomeScreen } />
-                <Route path="/catalogo" component= { CatalogoScreen } />
+                <Route path="https://commerce-app.herokuapp.com/catalogo" component= { CatalogoScreen } />
                 <Route exact path="/calificaciones" component= { CalificacioneScreen } />
                 <Route exact path="/calificacionDesc" component= { CalificacionDesc } />
                 <Route exact path="/calificacionAsc" component= { CalificacionAsc } />
                 <Route exact path="/search" component= { SearchScreen } />
-                <Route path="/book/:id" component= { BookScreen } />
+                <Route path="https://commerce-app.herokuapp.com/book/:id" component= { BookScreen } />
                 <Route exact path="/user" component= { UserScreen } />
                <Redirect to="/" />
             </Switch>
