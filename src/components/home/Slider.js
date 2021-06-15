@@ -13,7 +13,7 @@ export const SimpleSlider = () => {
   }, [])
 
   const fetchItems = async () => {
-    const url = `/api/carrusel/listaimg`
+    const url = `https://commerce-app.herokuapp.com/api/carrusel/listaimg`
     const resp = await fetch(url);
     const { data } = await resp.json();
 

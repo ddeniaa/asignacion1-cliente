@@ -38,7 +38,7 @@ export const SearchScreen = ({ history }) => {
     // }, [searchText]);
 
     const fetchTitulo = async (searchText) => {
-        const url = `api/libros/libros/palabrasClaves/${searchText}`
+        const url = `https://commerce-app.herokuapp.com/api/libros/libros/palabrasClaves/${searchText}`
         const resp = await fetch(url);
         const { data } = await resp.json();
 

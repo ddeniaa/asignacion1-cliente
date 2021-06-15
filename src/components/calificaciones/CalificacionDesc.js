@@ -20,7 +20,7 @@ export const CalificacionDesc = ({history}) => {
     }, []);
 
     const fetchItems = async () => {
-        const url = `/api/libros/librosdesc/calificaciones`
+        const url = `https://commerce-app.herokuapp.com/api/libros/librosdesc/calificaciones`
         const resp = await fetch(url);
         const { data } = await resp.json();
 

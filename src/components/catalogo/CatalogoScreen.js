@@ -11,7 +11,7 @@ export const CatalogoScreen = () => {
   }, []);
 
   const fetchItems = async () => {
-    const url = `/api/libros/listalibros`
+    const url = `https://commerce-app.herokuapp.com/api/libros/listalibros`
     const resp = await fetch(url);
     const { data } = await resp.json();
 

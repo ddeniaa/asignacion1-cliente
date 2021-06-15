@@ -23,7 +23,7 @@ export const BookScreen = ({ history }) => {
   }, [id]);
 
   const fetchItems = async (id) => {
-    const url = `/api/libros/listalibros/libro/${id}`
+    const url = `https://commerce-app.herokuapp.com/api/libros/listalibros/libro/${id}`
     const resp = await fetch(url);
     const { data } = await resp.json();
 
