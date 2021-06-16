@@ -17,7 +17,7 @@ export const CalificacioneScreen = () => {
             <hr />
             <hr />
             <p><li>Se muestran los libros con menor calificación:</li></p>
-            <Link  className="btn btn-light" to="/calificacionDesc">
+            <Link  className="btn btn-light" to="/calificacionAsc">
             <i className="fas fa-sort-amount-down-alt"></i>
             </Link> 
             <hr />

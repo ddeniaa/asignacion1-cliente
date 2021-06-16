@@ -42,15 +42,13 @@ export const BookCard = ({
           </Link>
         </div>
         <div className="card-footer">
-          <small>Calificación:
             <ReactStars
               count={calificacion}
               onChange={ratingChanged}
-              size={18}
+              size={19}
               color={"#7B113A"}
               edit={false}
             />
-          </small>
         </div>
       </div>
     </div>

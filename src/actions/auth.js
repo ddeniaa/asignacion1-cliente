@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export const startGoogleLogin = () =>{
     return( dispatch ) =>{
 
-        firebase.auth().signInWithPopup( googleAuthProvider )
+        firebase.auth().signInWithRedirect( googleAuthProvider )
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
