@@ -1,6 +1,7 @@
 
 import { facebookAuthProvider, firebase, googleAuthProvider }  from '../firebase/firebaseConfig'
 import { types } from '../types/types';
+import { Link } from 'react-router-dom';
 
 
 //accion  auth de google:
@@ -11,7 +12,7 @@ export const startGoogleLogin = () =>{
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
-               window.location.href = "/user"
+               <Link to="/user"/>
            )
         });
     }
@@ -25,7 +26,7 @@ export const startFacebookLogin = () =>{
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
-               window.location.href = `/user`
+              
            )
         });
     }

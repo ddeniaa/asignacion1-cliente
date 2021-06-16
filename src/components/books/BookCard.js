@@ -17,7 +17,7 @@ export const BookCard = ({
 }) => {
 
 
-  
+
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
@@ -26,12 +26,16 @@ export const BookCard = ({
 
   return (
     <div className="card-deck" id={id}>
-      <div onClick={ <Link to={ `/book/${ id }`} /> } className="card" style={{ maxWidth: 210 }}>
+      <div className="card" style={{ maxWidth: 210 }}>
         <img src={img} className="card-img" alt="img" />
         <div className="card-body">
           <h1 className="card-title"> {titulo} </h1>
           <p className="autor"> Autor: {autor} </p>
           <p className="decripcion"> {descripCorta} </p>
+          <hr/>
+          <Link to={`/book/${id}`}
+          >Más...
+          </Link>
         </div>
         <div className="card-footer">
           <small>Calificación:
