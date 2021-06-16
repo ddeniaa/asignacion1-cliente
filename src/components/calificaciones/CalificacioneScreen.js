@@ -19,7 +19,7 @@ export const CalificacioneScreen = () => {
             <hr />
             <p><li>Se muestran los libros con mayor calificación:</li></p>
             {/* <button */}
-            <Link to="/calificacionDesc">
+            <Link  className="btn btn-light" to="/calificacionDesc">
                 <i className="fas fa-sort-amount-up-alt"></i>
             </Link>
             {/* type="submit"
@@ -32,7 +32,7 @@ export const CalificacioneScreen = () => {
             <button
                 type="submit"
                 className="btn btn-light"
-                onClick={handleAsc}
+                // onClick={handleAsc}
             ><i className="fas fa-sort-amount-down-alt"></i></button>
             <hr />
         </div>
