@@ -17,11 +17,7 @@ export const BookCard = ({
 }) => {
 
 
-  const handlePictureClick = () => {
-    window.location.href = `/book/${id}`
-  }
-
-  <Link to={ `book/${ id }`} />  
+  
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
@@ -30,7 +26,7 @@ export const BookCard = ({
 
   return (
     <div className="card-deck" id={id}>
-      <div onClick={handlePictureClick} className="card" style={{ maxWidth: 210 }}>
+      <div onClick={ <Link to={ `/book/${ id }`} /> } className="card" style={{ maxWidth: 210 }}>
         <img src={img} className="card-img" alt="img" />
         <div className="card-body">
           <h1 className="card-title"> {titulo} </h1>
