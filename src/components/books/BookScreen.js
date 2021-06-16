@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
-import { db } from '../../firebase/firebaseConfig';
+
 
 
 
@@ -33,31 +33,30 @@ export const BookScreen = ({ history }) => {
   }
 
 
-  
 
-  const idc  = useParams()
-  console.log(idc);
+  // const idc  = useParams()
+  // console.log(idc);
 
 
-  const comentarios = async (idc) => {
+  // const comentarios = async (idc) => {
 
-    const comentariosSnap = await db.collection(`/books/${idc}/comentarios`).get();
-    const comentarios = [];
+  //   const comentariosSnap = await db.collection(`/books/${idc}/comentarios`).get();
+  //   const comentarios = [];
 
-    comentariosSnap.forEach(snapHijo => {
-      comentarios.push({
-        id: snapHijo.id,
-        usuario: snapHijo.data().usuario,
-        fechaComentario: snapHijo.data().fechaComentario,
-        descripComentario: snapHijo.data().descripComentario,
-        calificacionUsuario: snapHijo.data().calificacionUsuario
-      })
-    });
-    console.log(comentarios)
+  //   comentariosSnap.forEach(snapHijo => {
+  //     comentarios.push({
+  //       id: snapHijo.id,
+  //       usuario: snapHijo.data().usuario,
+  //       fechaComentario: snapHijo.data().fechaComentario,
+  //       descripComentario: snapHijo.data().descripComentario,
+  //       calificacionUsuario: snapHijo.data().calificacionUsuario
+  //     })
+  //   });
+  //   console.log(comentarios)
 
-  }
+  // }
 
-  comentarios()
+  // comentarios()
 
 
 

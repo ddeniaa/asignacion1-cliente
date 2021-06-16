@@ -35,17 +35,17 @@ export const SearchScreen = ({ history }) => {
         const resp = await fetch(url);
         const { data } = await resp.json();
 
+        if ( data === undefined ) {
+            return [];
+        }
+
         //console.log(url)
-        console.log(data)
+        //console.log(data)
         setFilt(data)
 
     }
 
-
-    if ( filt === '' ) {
-        return [];
-    }
-  
+ 
 
 
     return (
@@ -88,6 +88,14 @@ export const SearchScreen = ({ history }) => {
                         </div>
                     }
 
+{ 
+                        ( q !=='' && filt.length === 0 ) 
+                            && 
+                            <div className="alert alert-danger">
+                                No se encuentran resultados con: { q }
+                            </div>
+                    }
+                     
 
 
                     { 
