@@ -24,18 +24,11 @@ export const SearchScreen = ({ history }) => {
         history.push(`?q=${searchText}`)
     }
 
-    // //handleRefresh:
-    // const handleRefresh = () => {
-    //     history.push(`?q=${searchText}`)
-    //     window.location.reload();
-
-    // }
+   
 
     const [filt, setFilt] = useState([]);
 
-    // useEffect(() => {
-    //     fetchTitulo(searchText)
-    // }, [searchText]);
+    
 
     const fetchTitulo = async (searchText) => {
         const url = `https://commerce-app.herokuapp.com/api/libros/libros/palabrasClaves/${searchText}`
@@ -45,11 +38,13 @@ export const SearchScreen = ({ history }) => {
         //console.log(url)
         console.log(data)
         setFilt(data)
-        return data
 
     }
 
-  
+
+    if ( filt === '' ) {
+        return [];
+    }
   
 
 

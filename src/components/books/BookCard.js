@@ -32,8 +32,12 @@ export const BookCard = ({
           <h1 className="card-title"> {titulo} </h1>
           <p className="autor"> Autor: {autor} </p>
           <p className="decripcion"> {descripCorta} </p>
+          </div>
           <hr/>
-          <Link to={`/book/${id}`}
+          <div>
+          <Link 
+          className="unlibro"
+          to={`/book/${id}`}
           >Más...
           </Link>
         </div>

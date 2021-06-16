@@ -12,7 +12,6 @@ export const startGoogleLogin = () =>{
         .then (  ({ user }) => {
            dispatch (
                login( user.uid, user.displayName),
-               <Link to="/user"/>
            )
         });
     }
@@ -25,8 +24,7 @@ export const startFacebookLogin = () =>{
         firebase.auth().signInWithPopup( facebookAuthProvider )
         .then (  ({ user }) => {
            dispatch (
-               login( user.uid, user.displayName),
-              
+               login( user.uid, user.displayName),  
            )
         });
     }
