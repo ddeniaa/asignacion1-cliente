@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,7 +18,9 @@ export const BookCard = ({
 
 
   const handlePictureClick = () => {
-    window.location.href = `/book/${id}`
+
+    <Link to={ `book/${ id }`} />               
+
   }
 
 
