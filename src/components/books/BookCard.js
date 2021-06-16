@@ -18,12 +18,10 @@ export const BookCard = ({
 
 
   const handlePictureClick = () => {
-
-    <Link to={ `book/${ id }`} />               
-
+    window.location.href = `/book/${id}`
   }
 
-
+  <Link to={ `book/${ id }`} />  
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
