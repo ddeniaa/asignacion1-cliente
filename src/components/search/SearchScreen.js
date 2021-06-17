@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import queryString from 'query-string'
 import { useLocation } from 'react-router';
 import { useForm } from '../../hooks/useForm'
@@ -24,28 +24,34 @@ export const SearchScreen = ({ history }) => {
         history.push(`?q=${searchText}`)
     }
 
-   
+
 
     const [filt, setFilt] = useState([]);
 
-    
+    useEffect(() => {
+        fetchTitulo(searchText)
+    }, [searchText]);
+
+
 
     const fetchTitulo = async (searchText) => {
         const url = `https://commerce-app.herokuapp.com/api/libros/libros/palabrasClaves/${searchText}`
         const resp = await fetch(url);
         const { data } = await resp.json();
 
-        if ( data === undefined ) {
+        if (data === undefined) {
             return [];
         }
 
         //console.log(url)
-        //console.log(data)
+        console.log(data)
         setFilt(data)
 
     }
 
- 
+
+    //console.log(filt)
+
 
 
     return (
@@ -80,25 +86,24 @@ export const SearchScreen = ({ history }) => {
                     <h4> Results </h4>
                     <hr />
 
+
                     {
                         (q === '')
                         &&
                         <div className="alert alert-info">
-                            Encuentra tu libro..
+                            Encuentra tu libro...
                         </div>
                     }
 
-{ 
-                        ( q !=='' && filt.length === 0 ) 
-                            && 
-                            <div className="alert alert-danger">
-                                No se encuentran resultados con: { q }
-                            </div>
+                    {
+                        (q !== '' && filt.length === 0)
+                        &&
+                        <div className="alert alert-danger">
+                            No se encuentran Resultados con: {q}
+                        </div>
                     }
-                     
 
-
-                    { 
+                    {
                         filt.map(libro => (
                             <BookCard
                                 key={libro.id}

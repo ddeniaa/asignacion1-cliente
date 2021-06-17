@@ -84,11 +84,12 @@ export const AppRouter = () => {
 
 
           <PublicRoute
+            isAuthenticated={isLoggedIn}
             path="/"
             component={DashboardRoutes}
           />
 
-          <Redirect to="/login" />
+          <Redirect to="/" />
 
         </Switch>
       </div>
