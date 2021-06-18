@@ -130,7 +130,7 @@ export const Comentarios = () => {
                 title: 'Oops...',
                 text: 'Debes autenticarte para agregar un comentario.',
                 showConfirmButton: false,
-                footer: '<a href="https://commerce-app.herokuapp.com/login">Iniciar Sesion</a>'
+                footer: '<a href="/login">Iniciar Sesion</a>'
               });  
         } 
 
