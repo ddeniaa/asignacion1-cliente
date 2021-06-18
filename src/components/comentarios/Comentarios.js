@@ -7,7 +7,7 @@ import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, startComment } from '../../actions/auth';
 import Swal from 'sweetalert2';
-
+import { Redirect } from 'react-router';
 
 
 
@@ -129,9 +129,8 @@ export const Comentarios = () => {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Debes autenticarte para agregar un comentario.',
-                showConfirmButton: false,
-                footer: '<a Link="/login">Iniciar Sesion</a>'
               });  
+              <Redirect to="/login"/>
         } 
 
     }
