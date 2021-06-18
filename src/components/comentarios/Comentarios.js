@@ -130,7 +130,7 @@ export const Comentarios = () => {
                 title: 'Oops...',
                 text: 'Debes autenticarte para agregar un comentario.',
                 showConfirmButton: false,
-                footer: '<a href="/login">Iniciar Sesion</a>'
+                footer: '<a Link="/login">Iniciar Sesion</a>'
               });  
         } 
 
