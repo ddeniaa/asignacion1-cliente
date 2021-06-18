@@ -130,7 +130,7 @@ export const Comentarios = () => {
                 title: 'Oops...',
                 text: 'Debes autenticarte para agregar un comentario.',
               });  
-              <Redirect to="/login"/>
+              window.location = '/login';
         } 
 
     }
