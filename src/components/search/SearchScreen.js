@@ -87,13 +87,6 @@ export const SearchScreen = ({ history }) => {
                     <hr />
 
 
-                    {
-                        (q === '')
-                        &&
-                        <div className="alert alert-info">
-                            Encuentra tu libro...
-                        </div>
-                    }
 
                     {
                         (q !== '' && filt.length === 0)

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
+import { Comentarios } from '../comentarios/Comentarios';
 
 
 
@@ -31,34 +32,6 @@ export const BookScreen = ({ history }) => {
     //console.log(data)
     setFilt(data)
   }
-
-
-
-  // const idc  = useParams()
-  // console.log(idc);
-
-
-  // const comentarios = async (idc) => {
-
-  //   const comentariosSnap = await db.collection(`/books/${idc}/comentarios`).get();
-  //   const comentarios = [];
-
-  //   comentariosSnap.forEach(snapHijo => {
-  //     comentarios.push({
-  //       id: snapHijo.id,
-  //       usuario: snapHijo.data().usuario,
-  //       fechaComentario: snapHijo.data().fechaComentario,
-  //       descripComentario: snapHijo.data().descripComentario,
-  //       calificacionUsuario: snapHijo.data().calificacionUsuario
-  //     })
-  //   });
-  //   console.log(comentarios)
-
-  // }
-
-  // comentarios()
-
-
 
 
   //handlReturn retorna a la pagina anterior
@@ -112,19 +85,26 @@ export const BookScreen = ({ history }) => {
               <div className="card-title-libro">
                 <h1 className="card-text-unlibro"> {titulo}</h1>
                 <hr />
-                <p className="card-text">Autor: {autor} </p>
-                <div className="card-text">Calificación:
+                <div className="card-text">
+                  <h5>Autor: {autor}</h5>
+                </div>
+                <div className="card-text">
+                <h5> Calificación:
                   <ReactStars
                     count={calificacion}
                     onChange={ratingChanged}
-                    size={18}
+                    size={19}
                     color={"#7B113A"}
                     edit={false}
-                  />
+                  /></h5>
                 </div>
-                <p className="card-text">Sinopsis: {descripCorta} </p>
-                <p className="card-text"> {descripLarga} </p>
-                <p className="card-text">categoria: {categoria} </p>
+                <div>
+                  <h6>Sinopsis: {descripCorta} </h6>
+                  <h6>{descripLarga}  </h6>
+                </div>
+                <div>
+                  <h6> Categoria: {categoria}</h6>
+                </div>
                 <li className="card-text">Palabras Claves:{palabrasClaves}</li>
               </div>
             </div>
@@ -132,23 +112,8 @@ export const BookScreen = ({ history }) => {
         </div>
 
 
+ <Comentarios/>
 
-
-        {/* <hr />
-        <h5>Comentarios:</h5>
-        <hr />
-        <div className="card">
-          <div className="card-header">
-            {}
-          </div>
-          <div className="card-body">
-            <blockquote className="blockquote mb-0">
-              <p>{}</p>
-              <footer className="blockquote-footer">{} 
-              </footer>
-            </blockquote>
-          </div>
-        </div> */}
 
       </div>
     </>

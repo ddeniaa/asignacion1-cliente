@@ -1,9 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
+import { startLogout } from '../../actions/auth';
 
 
 
 export const Navbar = () => {
+    const dispatch = useDispatch();
+
+    //dispara la accion de logout
+    const hanleLogout = () => { 
+        dispatch(startLogout())
+    }
     
 
     return (
@@ -47,11 +55,19 @@ export const Navbar = () => {
 
             <form className="d-flex">
                
-                    <Link
+                    {/* <Link
                         type="button"
                         className="navbar-brand"
                         to="/login"
                     > login
+                    </Link> */}
+
+                    <Link
+                        className="btn-logout"
+                        onClick={hanleLogout}
+                        type="button"
+                        to="/"
+                    > <i className="fas fa-sign-out-alt fa-1x "></i>
                     </Link>
                     
             </form>

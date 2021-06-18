@@ -12,6 +12,12 @@ export const authReducer= ( state= {}, action )=>{
                name: action.payload.displayName
            }
 
+        //    case  types.addcomment:
+        //         return {
+        //             ...state,
+        //             comment: [ ...state.comment]
+        //         }
+
            case types.logout:
            return{}
    

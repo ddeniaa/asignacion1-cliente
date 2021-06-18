@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 
-
-
 export const BookCard = ({
   id,
   titulo,
@@ -23,24 +21,20 @@ export const BookCard = ({
     console.log(newRating);
   };
 
+  
+  
 
   return (
     <div className="card-deck" id={id}>
       <div className="card" style={{ maxWidth: 210 }}>
-        <img src={img} className="card-img" alt="img" />
+      <Link to={`/book/${id}`}>
+      <img src={img} className="card-img"  alt="img" />
+      </Link>  
         <div className="card-body">
           <h1 className="card-title"> {titulo} </h1>
           <p className="autor"> Autor: {autor} </p>
           <p className="decripcion"> {descripCorta} </p>
           </div>
-          <hr/>
-          <div>
-          <Link 
-          className="unlibro"
-          to={`/book/${id}`}
-          >Más...
-          </Link>
-        </div>
         <div className="card-footer">
             <ReactStars
               count={calificacion}
