@@ -69,7 +69,6 @@ export const AppRouter = () => {
 
         <Switch>
           <Route
-            isAuthenticated={isLoggedIn}
             exact path="/login"
             component={LoginScreen} />
 
@@ -83,7 +82,6 @@ export const AppRouter = () => {
 
 
           <Route
-            isAuthenticated={isLoggedIn}
             path="/"
             component={DashboardRoutes}
           />

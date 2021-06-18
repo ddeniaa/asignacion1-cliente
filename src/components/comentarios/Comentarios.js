@@ -7,7 +7,7 @@ import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, startComment } from '../../actions/auth';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 
@@ -132,7 +132,8 @@ export const Comentarios = () => {
                 showConfirmButton: false,
                 timer: 1500
               });  
-              window.location = <Link to="/login"/>
+              window.location = <Redirect to='/login'/>
+             
         } 
 
     }
