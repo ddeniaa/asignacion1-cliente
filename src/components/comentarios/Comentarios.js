@@ -123,7 +123,7 @@ export const Comentarios = () => {
                             timer: 1500
                         })
                         reset(contenido)
-
+                        window.location.reload(true);
                     })
             }
         } else {
