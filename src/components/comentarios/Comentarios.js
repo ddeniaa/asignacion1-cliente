@@ -129,8 +129,10 @@ export const Comentarios = () => {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Debes autenticarte para agregar un comentario.',
+                showConfirmButton: false,
+                timer: 1500
               });  
-              window.location = '/login';
+              window.location =<Link to="/login"/>
         } 
 
     }
