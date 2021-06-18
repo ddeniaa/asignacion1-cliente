@@ -7,8 +7,8 @@ import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, startComment } from '../../actions/auth';
 import Swal from 'sweetalert2';
-// import { Link, Redirect } from 'react-router-dom';
-import { LoginScreen } from '../../login/LoginScreen';
+import { Link  } from 'react-router-dom'
+
 
 
 
@@ -16,6 +16,7 @@ import { LoginScreen } from '../../login/LoginScreen';
 
 
 export const Comentarios = () => {
+
 
     //estrellas:
     const ratingChanged = (newRating) => {
@@ -130,10 +131,7 @@ export const Comentarios = () => {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Debes autenticarte para agregar un comentario.',
-                showConfirmButton: false,
-                timer: 1500
               });  
-              window.location = {LoginScreen}
              
         } 
 
@@ -161,7 +159,10 @@ export const Comentarios = () => {
             <hr />
 
             <div className="card border-success mb-3" >
-                <div className="card-header bg-transparent border-success"> <h5>Dejar un comentario:</h5></div>
+                <div className="card-header bg-transparent border-success"> <h5>Dejar un comentario:</h5>
+                <Link  className="session"  to="/login"> Iniciar sesion</Link>
+                </div>
+              
                 <div>
                     <h5 className="card-title">
                         Descripción:
@@ -189,7 +190,7 @@ export const Comentarios = () => {
                         /></h5>
                 </div>
                 <div className="card-footer bg-transparent border-success">
-                    <button type="button" className="btn btn-fefault"  onClick={ handleGuardar } >
+                    <button  className="btn btn-fefault"  onClick={ handleGuardar } >
                         Comentar
                     </button>
                 </div>

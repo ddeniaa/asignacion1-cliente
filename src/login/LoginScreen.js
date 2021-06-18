@@ -4,7 +4,7 @@ import { startFacebookLogin, startGoogleLogin } from '../actions/auth';
 
 
 
-export const LoginScreen = () => {
+export const LoginScreen = ({history}) => {
 
     const dispatch = useDispatch(); 
 
@@ -23,8 +23,24 @@ const handleFacebookLogin =() =>{
     dispatch ( startFacebookLogin() );
 }
 
+ //handlReturn retorna a la pagina anterior
+ const handleReturn = () => {
+
+    if (history.length <= 2) {
+        history.push('/');
+    } else {
+        history.goBack();
+    }
+}
 
     return (
+        <>
+        <button
+                className="btn m-1 btn-block btn-outline-ligth"
+                onClick={handleReturn}
+            >
+                <i className="fas fa-chevron-circle-left"></i>
+            </button>
         <div className="box-container">
 
             <h2 className="login-tittle">Login</h2>
@@ -61,5 +77,6 @@ const handleFacebookLogin =() =>{
                 </div>
             </form>
         </div>
+    </>
     )
 }
